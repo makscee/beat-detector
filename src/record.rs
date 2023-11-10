@@ -53,7 +53,7 @@ pub fn start_listening(
         host.default_input_device()
             .ok_or_else(|| "Must have input device!".to_string())
     })?;
-    let in_dev_cfg = in_dev.default_input_config().unwrap();
+    let in_dev_cfg = in_dev.default_output_config().unwrap();
     // let channels = in_dev_cfg.channels();
     let sampling_rate = in_dev_cfg.sample_rate();
     let sample_format = in_dev_cfg.sample_format();
